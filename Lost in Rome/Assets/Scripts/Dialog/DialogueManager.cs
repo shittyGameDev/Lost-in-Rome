@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        //Stänger av canvasen
         dialogueParent.SetActive(false);
         playerCamera = Camera.main.transform;
     }
@@ -46,6 +47,7 @@ public class DialogueManager : MonoBehaviour
         //Stänger av knapparna när man inte kan svara
         DisableButtons();
 
+        //Skriver ut dialogen
         StartCoroutine(PrintDialogue());
     }
 
@@ -88,7 +90,7 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueString line = dialogueList[currentDialogueIndex];
 
-            //Startar dialogen
+            //Gör att vi kan sätta på effekter vid dialog
             line.startDialogueEvent?.Invoke();
 
             if (line.isQuestion)
@@ -123,6 +125,7 @@ public class DialogueManager : MonoBehaviour
         DialogueStop();
     }
 
+    //Tar hand om vilken knapp man tryckit på
     private void HandleOptionSelected(int indexJump)
     {
         optionSelected = false;
@@ -131,6 +134,7 @@ public class DialogueManager : MonoBehaviour
         currentDialogueIndex = indexJump;
     }
 
+    //Skriver ut texten för dialogen
     private IEnumerator typeText(string text)
     {
         dialogueText.text = "";
@@ -159,7 +163,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         dialogueParent.SetActive(false);
 
-        //Gör så att man kan använda musen
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
