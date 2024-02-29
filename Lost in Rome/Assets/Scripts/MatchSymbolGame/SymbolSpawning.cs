@@ -4,7 +4,7 @@ using UnityEngine;
 public class SymbolSpawning : MonoBehaviour
 {
     [SerializeField] private GameObject[] symbolPrefabs; // Array av symbol prefabs
-    
+    [SerializeField] private float spawnInterval = 5f;
 
     private void Start()
     {
@@ -34,7 +34,7 @@ public class SymbolSpawning : MonoBehaviour
                 //Väntar innan nästa symbol spawnas
                 yield return new WaitForSeconds(10f);
             }
-
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 }

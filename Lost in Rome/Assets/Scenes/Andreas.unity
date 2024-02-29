@@ -2490,7 +2490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topDownCamera: {fileID: 774470805}
   firstPersonCamera: {fileID: 1183910533}
-  Manager: 0
+  Manager: 1
 --- !u!1 &1638928811
 GameObject:
   m_ObjectHideFlags: 0
