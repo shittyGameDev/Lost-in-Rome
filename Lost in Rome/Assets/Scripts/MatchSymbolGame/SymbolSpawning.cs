@@ -1,22 +1,40 @@
+using System.Collections;
 using UnityEngine;
 
 public class SymbolSpawning : MonoBehaviour
 {
-    public Sprite[] symbols; // Array av symboler
-    public static GameObject currentSymbolObject;
+    [SerializeField] private GameObject[] symbolPrefabs; // Array av symbol prefabs
+    [SerializeField] private float spawnInterval = 5f;
 
-    void Start()
+    private void Start()
     {
-        SpawnSymbol();
+        // Startar en coroutine för att spawna symboler
+        StartCoroutine(SpawnSymbol());
     }
 
-    void SpawnSymbol()
+
+
+    IEnumerator SpawnSymbol()
     {
-        int randomIndex = Random.Range(0, symbols.Length);
-        currentSymbolObject = new GameObject("Symbol");
-        SpriteRenderer renderer = currentSymbolObject.AddComponent<SpriteRenderer>();
-        renderer.sprite = symbols[randomIndex];
-        currentSymbolObject.transform.position = transform.position + Vector3.up * 2f;
-        currentSymbolObject.transform.parent = transform;
+        while (true)
+        {
+            // Tittar ifall det finns symbol prefabs 
+            if (symbolPrefabs != null && symbolPrefabs.Length > 0)
+            {
+                //Tar fram en random symbol från arrayen
+                int randomIndex = Random.Range(0, symbolPrefabs.Length);
+                //Spawnpunkten för symbolen
+                Vector3 spawnPosition = transform.position + Vector3.up * 1.5f;
+
+                //Spawnar symbol
+                GameObject symbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
+
+                //Förstör symbolen efter 10 sek
+                Destroy(symbolInstance, 10f);
+                //Väntar innan nästa symbol spawnas
+                yield return new WaitForSeconds(10f);
+            }
+
+        }
     }
 }
