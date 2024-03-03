@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private Button option1Button;
     [SerializeField] private Button option2Button;
+    
 
     [SerializeField] private float typingSpeed = 0.05f;
     [SerializeField] private float turningSpeed = 2f;
@@ -27,6 +28,7 @@ public class DialogueManager : MonoBehaviour
         //Stänger av canvasen
         dialogueParent.SetActive(false);
         playerCamera = Camera.main.transform;
+       
     }
 
     public void DialogueStart(List<dialogueString> textToPrint, Transform NPC)
@@ -125,7 +127,7 @@ public class DialogueManager : MonoBehaviour
         DialogueStop();
     }
 
-    //Tar hand om vilken knapp man tryckit på
+    //Tar hand om vilken knapp man tryckt på
     private void HandleOptionSelected(int indexJump)
     {
         optionSelected = false;
