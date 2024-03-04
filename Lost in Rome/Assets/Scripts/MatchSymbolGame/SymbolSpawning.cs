@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SymbolSpawning : MonoBehaviour
 {
     [SerializeField] private GameObject[] symbolPrefabs; // Array av symbol prefabs
-    [SerializeField] private float spawnInterval = 5f;
+    [SerializeField] private float spawnInterval = 15f;
 
     private GameObject currentSymbolInstance; // Referens till den nuvarande spawnade symbolen
 
@@ -19,20 +19,16 @@ public class SymbolSpawning : MonoBehaviour
     {
         while (true)
         {
-            // Tittar ifall det finns några prefabs tillagda
-            if (symbolPrefabs != null && symbolPrefabs.Length > 0)
-            {
-                // Tar fram random symboler
-                int randomIndex = Random.Range(0, symbolPrefabs.Length);
-                // Spawn positionen för symbolerna
-                Vector3 spawnPosition = transform.position + Vector3.up * 1.5f;
+            // Tar fram random symboler
+            int randomIndex = Random.Range(0, symbolPrefabs.Length);
+            // Spawn positionen för symbolerna
+            Vector3 spawnPosition = transform.position + Vector3.up * 1.5f;
 
-                // Spawnar symbolen
-                currentSymbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
+            // Spawnar symbolen
+            currentSymbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
 
-                // Förstör symbolen efter 10 sekunder
-                Destroy(currentSymbolInstance, 10f);
-            }
+            // Förstör symbolen efter 10 sekunder
+            Destroy(currentSymbolInstance, 10f);
 
             // Väntar innan den spawnar nästa symbol
             yield return new WaitForSeconds(spawnInterval);

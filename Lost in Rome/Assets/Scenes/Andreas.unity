@@ -675,7 +675,7 @@ MonoBehaviour:
   - {fileID: 3486179708127047745, guid: 4b18b7ada6f20574bb0946b33c23bf14, type: 3}
   - {fileID: 8915289424096060258, guid: 889b0862dc06c4e4b8c65f7f6149c81e, type: 3}
   - {fileID: 7638985118320916133, guid: a6befb96106f39742ba148dd44558724, type: 3}
-  spawnInterval: 5
+  spawnInterval: 15
 --- !u!212 &557852869
 SpriteRenderer:
   m_ObjectHideFlags: 0
