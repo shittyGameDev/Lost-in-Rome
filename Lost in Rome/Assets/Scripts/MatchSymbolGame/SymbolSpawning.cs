@@ -1,40 +1,70 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SymbolSpawning : MonoBehaviour
 {
     [SerializeField] private GameObject[] symbolPrefabs; // Array av symbol prefabs
     [SerializeField] private float spawnInterval = 5f;
 
+    private GameObject currentSymbolInstance; // Referens till den nuvarande spawnade symbolen
+
     private void Start()
     {
-        // Startar en coroutine för att spawna symboler
+        // Startar symbol spawnadet
         StartCoroutine(SpawnSymbol());
     }
-
-
 
     IEnumerator SpawnSymbol()
     {
         while (true)
         {
-            // Tittar ifall det finns symbol prefabs 
+            // Tittar ifall det finns några prefabs tillagda
             if (symbolPrefabs != null && symbolPrefabs.Length > 0)
             {
-                //Tar fram en random symbol från arrayen
+                // Tar fram random symboler
                 int randomIndex = Random.Range(0, symbolPrefabs.Length);
-                //Spawnpunkten för symbolen
+                // Spawn positionen för symbolerna
                 Vector3 spawnPosition = transform.position + Vector3.up * 1.5f;
 
-                //Spawnar symbol
-                GameObject symbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
+                // Spawnar symbolen
+                currentSymbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
 
-                //Förstör symbolen efter 10 sek
-                Destroy(symbolInstance, 10f);
-                //Väntar innan nästa symbol spawnas
-                yield return new WaitForSeconds(10f);
+                // Förstör symbolen efter 10 sekunder
+                Destroy(currentSymbolInstance, 10f);
             }
+
+            // Väntar innan den spawnar nästa symbol
             yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    public void CheckButtonPressed(Button buttonPressed)
+    {
+        // Get the sprite for the button pressed by the player
+        Sprite pressedButtonSprite = buttonPressed.GetComponent<Image>().sprite;
+
+        // Tittar ifall det finns en aktiv symbol att jämföra med
+        if (currentSymbolInstance != null)
+        {
+            // Tar fram spriten för den nuvarande symbolen
+            Sprite currentSymbolSprite = currentSymbolInstance.GetComponent<SpriteRenderer>().sprite;
+
+            // Jämför the nuvarande symbolen med knappen man tröck på
+            if (currentSymbolSprite == pressedButtonSprite)
+            {
+                // Förstör symbolen ifall man tryckt på rätt knapp
+                Destroy(currentSymbolInstance);
+                Debug.Log("Correct button pressed!");
+            }
+            else
+            {
+                Debug.Log("Incorrect button pressed!");
+            }
+        }
+        else
+        {
+            Debug.Log("No current symbol to compare with.");
         }
     }
 }
