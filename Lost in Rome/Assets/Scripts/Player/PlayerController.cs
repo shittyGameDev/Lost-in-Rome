@@ -66,14 +66,17 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAttack(InputValue value)
     {
-        if (value.isPressed)
-        {
-            anim.SetBool("IsAttacking", true);
-        }
-        else
-        {
-            anim.SetBool("IsAttacking", false);
-        }
+       if (value.isPressed)
+       {
+           if (Mathf.Abs(moveInput.y) > Mathf.Abs(moveInput.x))
+           {
+               anim.SetTrigger(moveInput.y > 0 ? "AttackUp" : "AttackDown");
+           }
+           else
+           {
+               anim.SetTrigger("AttackHorizontal");
+           }
+       }
     }
 
     void OnMove(InputValue moveValue) 
