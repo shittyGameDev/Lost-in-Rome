@@ -17,18 +17,28 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
-
+    public static PlayerController Instance { get; private set; }
+    public bool CanMove { get; set; } = true;
     private Vector2 lastMoveDirection;
 
-    void Start()
+    void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
+        if (Instance == null)
+        {
+            Instance = this;
+            rb = GetComponent<Rigidbody2D>();
+            anim = GetComponent<Animator>();
+            sprite = GetComponent<SpriteRenderer>();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
     {
+        if(!CanMove) return;
         anim.SetFloat("Horizontal", Mathf.Abs(moveInput.x));
         anim.SetFloat("Vertical", moveInput.y);
 
@@ -40,13 +50,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (moveInput != Vector2.zero && CanMove(moveInput))
+        if (!CanMove || moveInput == Vector2.zero) return;
+
+        if (KanMove(moveInput))
         {
             rb.MovePosition(rb.position + moveInput * speed * Time.fixedDeltaTime);
         }
     }
 
-    private bool CanMove(Vector2 direction)
+    private bool KanMove(Vector2 direction)
     {
        if (direction != Vector2.zero) 
        {
