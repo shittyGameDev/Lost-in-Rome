@@ -53,10 +53,13 @@ public class DialogRumpa : MonoBehaviour
     {
         if (currentRad < dialog.Rader.Count)
         {
-            isTyping = true; 
-            dialogText.text = ""; 
-            StartCoroutine(TypeDialog(dialog.Rader[currentRad]));
-            currentRad++;
+            isTyping = true;
+            dialogText.text = "";
+            for (int i = currentRad; i < dialog.Rader.Count; i++)
+            {
+                StartCoroutine(TypeDialog(dialog.Rader[i]));
+                currentRad++;
+            }
         }
         else
         {
