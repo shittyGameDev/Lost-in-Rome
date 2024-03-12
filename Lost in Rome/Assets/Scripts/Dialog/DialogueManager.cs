@@ -130,7 +130,7 @@ public class DialogueManager : MonoBehaviour
     //Tar hand om vilken knapp man tryckt på
     private void HandleOptionSelected(int indexJump)
     {
-        optionSelected = false;
+        optionSelected = false; // Såg i kommentarerna på videon att detta kanske behöver ändras till true
         DisableButtons();
 
         currentDialogueIndex = indexJump;
