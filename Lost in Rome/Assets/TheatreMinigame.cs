@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TheatreMinigame : MonoBehaviour
 {
     public GameObject blackScreen;
     public AudioSource audienceReaction;
     public AudioClip booSound, applauseSound, cheerSound;
-    public Text questionText; // UI Text för att visa frågan
+    public TMP_Text questionText; // UI Text för att visa frågan
     public Button[] answerButtons; // Knappar för svarsalternativ
     public List<Question> questions; // Lista med alla frågor
     public GameObject endGamePanel; // Panel som visas i slutet av spelet
-    public Text endGameText; // Text som visar resultatet (vunnit eller förlorat)
+    public TMP_Text endGameText; // Text som visar resultatet (vunnit eller förlorat)
     public Transform insideTheatrePosition; // Spelarens position inuti teatern
     public Transform outsideTheatrePosition; // Spelarens position utanför teatern
     private GameObject player;
@@ -62,7 +63,7 @@ public class TheatreMinigame : MonoBehaviour
                 if (i < currentQuestion.answers.Length)
                 {
                     answerButtons[i].gameObject.SetActive(true);
-                    answerButtons[i].GetComponentInChildren<Text>().text = currentQuestion.answers[i];
+                    answerButtons[i].GetComponentInChildren<TMP_Text>().text = currentQuestion.answers[i];
                     answerButtons[i].onClick.RemoveAllListeners();
                     int index = i; // Capture index for lambda expression
                     answerButtons[i].onClick.AddListener(() => ChooseOption(index));

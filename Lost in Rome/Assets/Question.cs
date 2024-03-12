@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Question : MonoBehaviour
+[System.Serializable]
+public class Question
 {
     public string questionText; // Texten för själva frågan
     public string[] answers; // En array med svarsalternativ
