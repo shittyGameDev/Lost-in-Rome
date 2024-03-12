@@ -151,10 +151,10 @@ public class TheatreMinigame : MonoBehaviour
 
     IEnumerator RestartMinigameSequence()
     {
+        endGamePanel.SetActive(false);
         // Visa en svart skärm för övergången
         blackScreen.SetActive(true);
         yield return new WaitForSeconds(1f); // Vänta en sekund (eller hur lång tid du vill att cutscenen ska vara)
-        endGamePanel.SetActive(false);
         // Dölj svarta skärmen och starta om minispelet
         blackScreen.SetActive(false);
 
@@ -171,7 +171,6 @@ public class TheatreMinigame : MonoBehaviour
         {
             button.gameObject.SetActive(true);
         }
-        endGamePanel.SetActive(false);
 
         // Börja om minispelet
         StartMinigame();
@@ -185,11 +184,10 @@ public class TheatreMinigame : MonoBehaviour
     IEnumerator ExitMinigameSequence()
     {
         // Visa en svart skärm för övergången
+        endGamePanel.SetActive(false);
         blackScreen.SetActive(true);
         yield return new WaitForSeconds(1f); // Vänta en sekund (eller hur lång tid du vill att cutscenen ska vara)
                                              // Dölj minispel-UI
-        endGamePanel.SetActive(false);
-
         // Flytta spelaren till positionen utanför teatern
         player.transform.position = outsideTheatrePosition.position;
 
