@@ -7,6 +7,7 @@ public class Book : MonoBehaviour
     public GameObject questionMark;
     public GameObject bookUI; 
     private bool playerNear = false;
+    public static bool hasReadBook = false;
 
     void Update()
     {
@@ -14,7 +15,8 @@ public class Book : MonoBehaviour
         {
             questionMark.SetActive(false);
             bookUI.SetActive(true);
-            PlayerController.Instance.CanMove = false; 
+            PlayerController.Instance.CanMove = false;
+            hasReadBook = true;
         }
 
         if (bookUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
