@@ -431,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &230573677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -812,8 +812,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -830,8 +830,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1140,7 +1140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &682061730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1678,7 +1678,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 790598188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1236893613}
+        m_TargetAssemblyTypeName: TheatreMinigame, Assembly-CSharp
+        m_MethodName: RestartMinigame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &790598188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,7 +2486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1169761481}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1236893613}
+        m_TargetAssemblyTypeName: TheatreMinigame, Assembly-CSharp
+        m_MethodName: ExitMinigame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1169761481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,7 +2549,6 @@ GameObject:
   - component: {fileID: 1236893615}
   - component: {fileID: 1236893614}
   - component: {fileID: 1236893613}
-  - component: {fileID: 1236893617}
   - component: {fileID: 1236893618}
   m_Layer: 0
   m_Name: minigameStart
@@ -2556,12 +2579,27 @@ MonoBehaviour:
   - {fileID: 1678860052}
   - {fileID: 736941664}
   - {fileID: 1686446062}
+  restartButton: {fileID: 790598187}
+  exitButton: {fileID: 1169761480}
   questions:
-  - {fileID: 1236893617}
-  - {fileID: 1236893617}
-  - {fileID: 1236893617}
-  - {fileID: 1236893617}
-  - {fileID: 1236893617}
+  - questionText: "Vem \xE4r snyggast?"
+    answers:
+    - Kingpin
+    - 'Andreas '
+    - Tom
+    correctAnswerIndex: 0
+  - questionText: "Vem \xE4r coolast?"
+    answers:
+    - Batman
+    - Kingpin
+    - Spiderman
+    correctAnswerIndex: 1
+  - questionText: "Vem \xE4r b\xE4st?"
+    answers:
+    - Julia
+    - Robin
+    - Kingpin
+    correctAnswerIndex: 2
   endGamePanel: {fileID: 1566532978}
   endGameText: {fileID: 1459516404}
   insideTheatrePosition: {fileID: 796904521}
@@ -2678,24 +2716,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1236893617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236893612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0e716e65b4bbf4c80550a101c7405f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questionText: "Vem \xE4r b\xE4st i v\xE4rlden?"
-  answers:
-  - Kingpin
-  - Andreas
-  - Tom
-  correctAnswerIndex: 0
 --- !u!82 &1236893618
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3196,7 +3216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1566532979
 MonoBehaviour:
   m_ObjectHideFlags: 0
