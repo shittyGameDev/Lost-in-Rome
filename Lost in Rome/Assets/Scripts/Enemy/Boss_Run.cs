@@ -26,7 +26,7 @@ public class Boss_Run : StateMachineBehaviour
 	{
 		boss.LookAtPlayer();
 
-		Vector2 target = new Vector2(player.position.x, rb.position.y);
+		Vector2 target = new Vector2(player.position.x, player.position.y);
 		Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
 		rb.MovePosition(newPos);
 
