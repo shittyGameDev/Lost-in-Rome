@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        //Stänger av canvasen
+        //Stï¿½nger av canvasen
         dialogueParent.SetActive(false);
         playerCamera = Camera.main.transform;
        
@@ -35,18 +35,18 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueParent.SetActive(true);
 
-        //Gör så att man kan använda musen
+        //Gï¿½r sï¿½ att man kan anvï¿½nda musen
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        //Metod för att vrida kameran mot NPC
+        //Metod fï¿½r att vrida kameran mot NPC
         StartCoroutine(TurnCameraTowardsNPC(NPC));
 
 
         dialogueList = textToPrint;
         currentDialogueIndex = 0;
 
-        //Stänger av knapparna när man inte kan svara
+        //Stï¿½nger av knapparna nï¿½r man inte kan svara
         DisableButtons();
 
         //Skriver ut dialogen
@@ -55,23 +55,23 @@ public class DialogueManager : MonoBehaviour
 
     private void DisableButtons()
     {
-        //Stänger av knapparna
+        //Stï¿½nger av knapparna
         option1Button.interactable = false;
         option2Button.interactable = false;
 
-        //Skriver på knappar no option när man inte kan svara
+        //Skriver pï¿½ knappar no option nï¿½r man inte kan svara
         option1Button.GetComponentInChildren<TMP_Text>().text = "No Option";
         option2Button.GetComponentInChildren<TMP_Text>().text = "No Option";
     }
 
     private IEnumerator TurnCameraTowardsNPC(Transform NPC)
     {
-        //Där player kameran är just nu
+        //Dï¿½r player kameran ï¿½r just nu
         Quaternion startRotation = playerCamera.rotation;
-        //Tar fram vart någonstans kameran ska flytta sig till vilket är NPC position
+        //Tar fram vart nï¿½gonstans kameran ska flytta sig till vilket ï¿½r NPC position
         Quaternion targetRotation = Quaternion.LookRotation(NPC.position - playerCamera.position);
 
-        //Hur lång tid det ska ta för kameran att snappa dit den ska
+        //Hur lï¿½ng tid det ska ta fï¿½r kameran att snappa dit den ska
         float elapsedTime = 0f;
 
         while(elapsedTime < 1f)
@@ -92,22 +92,22 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueString line = dialogueList[currentDialogueIndex];
 
-            //Gör att vi kan sätta på effekter vid dialog
+            //Gï¿½r att vi kan sï¿½tta pï¿½ effekter vid dialog
             line.startDialogueEvent?.Invoke();
 
             if (line.isQuestion)
             {
                 yield return StartCoroutine(typeText(line.text));
 
-                //Sätter på knapparna
+                //Sï¿½tter pï¿½ knapparna
                 option1Button.interactable = true;
                 option2Button.interactable = true;
 
-                //Skriver på knappar vad vi vill svara med
+                //Skriver pï¿½ knappar vad vi vill svara med
                 option1Button.GetComponentInChildren<TMP_Text>().text = line.answerOption1;
                 option2Button.GetComponentInChildren<TMP_Text>().text = line.answerOption2;
 
-                //Lyssnar efter vilket alternativ man klickat på
+                //Lyssnar efter vilket alternativ man klickat pï¿½
                 option1Button.onClick.AddListener(() => HandleOptionSelected(line.option1IndexJump));
                 option2Button.onClick.AddListener(() => HandleOptionSelected(line.option2IndexJump));
 
@@ -127,16 +127,16 @@ public class DialogueManager : MonoBehaviour
         DialogueStop();
     }
 
-    //Tar hand om vilken knapp man tryckt på
+    //Tar hand om vilken knapp man tryckt pï¿½
     private void HandleOptionSelected(int indexJump)
     {
-        optionSelected = false; // Såg i kommentarerna på videon att detta kanske behöver ändras till true
+        optionSelected = true; // Sï¿½g i kommentarerna pï¿½ videon att detta kanske behï¿½ver ï¿½ndras till true
         DisableButtons();
 
         currentDialogueIndex = indexJump;
     }
 
-    //Skriver ut texten för dialogen
+    //Skriver ut texten fï¿½r dialogen
     private IEnumerator typeText(string text)
     {
         dialogueText.text = "";
