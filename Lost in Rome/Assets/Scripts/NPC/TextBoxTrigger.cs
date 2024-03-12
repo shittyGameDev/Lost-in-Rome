@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class TextBoxTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject textBox;
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player") && other.GetComponent<QuestManager>().questCompleted == false)
+        {
+            textBox.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            textBox.SetActive(false);
+        }
     }
 }
