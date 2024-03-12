@@ -7,7 +7,10 @@ TagManager:
   - NPC
   - Symbol
   - Canvas
-  - Boss
+  - Law
+  - Knowledge
+  - War
+  - FoodNCulture
   layers:
   - Default
   - TransparentFX

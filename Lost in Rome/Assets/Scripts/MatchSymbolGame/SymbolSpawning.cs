@@ -5,7 +5,17 @@ using UnityEngine.UI;
 public class SymbolSpawning : MonoBehaviour
 {
     [SerializeField] private GameObject[] symbolPrefabs; // Array av symbol prefabs
-    [SerializeField] private float spawnInterval = 15f;
+    [SerializeField] private float spawnInterval = 10f;
+
+
+    private int reputation;
+    private int maxReputation = 40;
+    public Slider slider;
+
+    private GameObject lawSymbols;
+    private GameObject foodSymbols;
+    private GameObject warSymbols;
+    private GameObject knowledgeSymbols;
 
     private GameObject currentSymbolInstance; // Referens till den nuvarande spawnade symbolen
 
@@ -13,6 +23,8 @@ public class SymbolSpawning : MonoBehaviour
     {
         // Startar symbol spawnadet
         StartCoroutine(SpawnSymbol());
+        slider.maxValue = maxReputation;
+        slider.value = reputation;
     }
 
     IEnumerator SpawnSymbol()
@@ -21,46 +33,60 @@ public class SymbolSpawning : MonoBehaviour
         {
             // Tar fram random symboler
             int randomIndex = Random.Range(0, symbolPrefabs.Length);
-            // Spawn positionen för symbolerna
+            // Spawn positionen fï¿½r symbolerna
             Vector3 spawnPosition = transform.position + Vector3.up * 1.5f;
 
             // Spawnar symbolen
             currentSymbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
 
-            // Förstör symbolen efter 10 sekunder
+            // Fï¿½rstï¿½r symbolen efter 10 sekunder
             Destroy(currentSymbolInstance, 10f);
 
-            // Väntar innan den spawnar nästa symbol
-            yield return new WaitForSeconds(spawnInterval);
+            // Vï¿½ntar innan den spawnar nï¿½sta symbol
+            yield return new WaitForSeconds(Random.Range(spawnInterval - 5, spawnInterval + 5));
         }
     }
 
-    public void CheckButtonPressed(Button buttonPressed)
+    public void DestroyLawSymbol()
     {
-        // Get the sprite for the button pressed by the player
-        Sprite pressedButtonSprite = buttonPressed.GetComponent<Image>().sprite;
-
-        // Tittar ifall det finns en aktiv symbol att jämföra med
-        if (currentSymbolInstance != null)
+        lawSymbols = GameObject.FindGameObjectWithTag("Law");
+        if (lawSymbols != null)
         {
-            // Tar fram spriten för den nuvarande symbolen
-            Sprite currentSymbolSprite = currentSymbolInstance.GetComponent<SpriteRenderer>().sprite;
-
-            // Jämför the nuvarande symbolen med knappen man tröck på
-            if (currentSymbolSprite == pressedButtonSprite)
-            {
-                // Förstör symbolen ifall man tryckt på rätt knapp
-                Destroy(currentSymbolInstance);
-                Debug.Log("Correct button pressed!");
-            }
-            else
-            {
-                Debug.Log("Incorrect button pressed!");
-            }
+            Destroy(lawSymbols);
+            reputation += 2;
+            slider.value = reputation;
         }
-        else
+    }
+
+    public void DestroyFoodNCultureSymbols()
+    {
+        foodSymbols = GameObject.FindGameObjectWithTag("FoodNCulture");
+        if (foodSymbols != null)
         {
-            Debug.Log("No current symbol to compare with.");
+            Destroy(foodSymbols);
+            reputation += 2;
+            slider.value = reputation;
+        }
+    }
+
+    public void DestroyWarSymbols()
+    {
+        warSymbols = GameObject.FindGameObjectWithTag("War");
+        if (warSymbols != null)
+        {
+            Destroy(warSymbols);
+            reputation += 2;
+            slider.value = reputation;
+        }
+    }
+    public void DestroyKnowledgeSymbols()
+    {
+        knowledgeSymbols = GameObject.FindGameObjectWithTag("Knowledge");
+        if (knowledgeSymbols != null)
+        {
+            Destroy(knowledgeSymbols);
+            reputation += 2;
+            slider.value = reputation;
         }
     }
 }
