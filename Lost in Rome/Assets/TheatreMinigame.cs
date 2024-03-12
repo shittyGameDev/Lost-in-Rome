@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TheatreMinigame : MonoBehaviour
 {
     public GameObject blackScreen;
     public AudioSource audienceReaction;
     public AudioClip booSound, applauseSound, cheerSound;
-    public Text questionText; // UI Text för att visa frågan
-    public Button[] answerButtons; // Knappar för svarsalternativ
-    public List<Question> questions; // Lista med alla frågor
-    public GameObject endGamePanel; // Panel som visas i slutet av spelet
-    public Text endGameText; // Text som visar resultatet (vunnit eller förlorat)
-    public Transform insideTheatrePosition; // Spelarens position inuti teatern
-    public Transform outsideTheatrePosition; // Spelarens position utanför teatern
+    public TMP_Text questionText;
+    public Button[] answerButtons; 
+    public Button restartButton;
+    public Button exitButton;
+    public List<Question> questions; 
+    public GameObject endGamePanel; 
+    public TMP_Text endGameText; 
+    public Transform insideTheatrePosition;
+    public Transform outsideTheatrePosition; 
     private GameObject player;
     private bool playerNear = false;
     private int currentQuestionIndex = 0;
@@ -22,7 +25,7 @@ public class TheatreMinigame : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); // Antag att spelaren har taggen "Player"
+        player = GameObject.FindGameObjectWithTag("Player"); 
         endGamePanel.SetActive(false);
     }
 
@@ -36,11 +39,16 @@ public class TheatreMinigame : MonoBehaviour
 
     IEnumerator StartMinigameSequence()
     {
-        player.GetComponent<PlayerController>().CanMove = false; // Antag att spelarkontrollern har en CanMove-property
+        player.GetComponent<PlayerController>().CanMove = false;
         blackScreen.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         player.transform.position = insideTheatrePosition.position;
         blackScreen.SetActive(false);
+        questionText.gameObject.SetActive(true);
+        foreach(var button  in answerButtons)
+        {
+            button.gameObject.SetActive(true);
+        }
         StartMinigame();
     }
 
@@ -62,9 +70,9 @@ public class TheatreMinigame : MonoBehaviour
                 if (i < currentQuestion.answers.Length)
                 {
                     answerButtons[i].gameObject.SetActive(true);
-                    answerButtons[i].GetComponentInChildren<Text>().text = currentQuestion.answers[i];
+                    answerButtons[i].GetComponentInChildren<TMP_Text>().text = currentQuestion.answers[i];
                     answerButtons[i].onClick.RemoveAllListeners();
-                    int index = i; // Capture index for lambda expression
+                    int index = i;
                     answerButtons[i].onClick.AddListener(() => ChooseOption(index));
                 }
                 else
@@ -109,26 +117,83 @@ public class TheatreMinigame : MonoBehaviour
 
     IEnumerator FinishSequence()
     {
+        questionText.gameObject.SetActive(false);
+        foreach (var button in answerButtons)
+        {
+            button.gameObject.SetActive(false);
+        }
         endGamePanel.SetActive(true);
         if (correctAnswers == questions.Count)
         {
+            restartButton.gameObject.SetActive(false); 
+            exitButton.gameObject.SetActive(false);   
             audienceReaction.PlayOneShot(applauseSound);
             endGameText.text = "Grattis! Du klarade alla frågor!";
             yield return new WaitForSeconds(applauseSound.length);
             blackScreen.SetActive(true);
+            endGamePanel.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             player.transform.position = outsideTheatrePosition.position;
+            blackScreen.SetActive(false);
+            player.GetComponent<PlayerController>().CanMove = true;
         }
         else
-        {
+        {   
+            restartButton.gameObject.SetActive(true);
+            exitButton.gameObject.SetActive(true);
             audienceReaction.PlayOneShot(booSound);
             endGameText.text = "Tyvärr, du klarade inte alla frågor. Försök igen!";
         }
-        yield return new WaitForSeconds(2f); // Ge spelaren tid att läsa texten
+        yield return new WaitForSeconds(2f);  
+    }
+
+    public void RestartMinigame()
+    {
+        StartCoroutine(RestartMinigameSequence());
+    }
+
+    IEnumerator RestartMinigameSequence()
+    {
         endGamePanel.SetActive(false);
+        blackScreen.SetActive(true);
+        yield return new WaitForSeconds(1f); 
         blackScreen.SetActive(false);
-        player.GetComponent<PlayerController>().CanMove = true; // Återaktivera spelarrörelse
-        // Reset minigame or provide options to replay or exit
+
+        player.transform.position = insideTheatrePosition.position;
+
+        currentQuestionIndex = 0;
+        correctAnswers = 0;
+
+        questionText.gameObject.SetActive(true);
+        foreach (var button in answerButtons)
+        {
+            button.gameObject.SetActive(true);
+        }
+
+        StartMinigame();
+    }
+
+    public void ExitMinigame()
+    {
+        StartCoroutine(ExitMinigameSequence()); 
+    }
+
+    IEnumerator ExitMinigameSequence()
+    {
+        endGamePanel.SetActive(false);
+        blackScreen.SetActive(true);
+        yield return new WaitForSeconds(1f);
+
+        player.transform.position = outsideTheatrePosition.position;
+
+        blackScreen.SetActive(false);
+        questionText.gameObject.SetActive(false);
+        foreach (var button in answerButtons)
+        {
+            button.gameObject.SetActive(false);
+        }
+        blackScreen.SetActive(false);
+        player.GetComponent<PlayerController>().CanMove = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)
