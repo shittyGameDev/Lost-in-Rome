@@ -6,15 +6,20 @@ TagManager:
   tags:
   - NPC
   - Symbol
+  - Canvas
+  - Law
+  - Knowledge
+  - War
+  - FoodNCulture
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Obstacles
+  - Boss
   - 
   - 
   - 

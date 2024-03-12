@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TextBoxTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject textBox;
+    public TextMeshProUGUI text;
+    public GameObject questText;
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player") && other.GetComponent<QuestManager>().questCompleted == false)
+        {
+            textBox.SetActive(true);
+            questText.SetActive(true);
+        }
+        else if(other.GetComponent<QuestManager>().questCompleted == true)
+        {
+            text.text = "Thank you! This will help us build bridges and many other things!";
+            textBox.SetActive(true);
+            
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            textBox.SetActive(false);
+        }
     }
 }
