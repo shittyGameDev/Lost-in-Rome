@@ -227,7 +227,7 @@ MonoBehaviour:
     isQuestion: 1
     answerOption1: What is going on!!
     answerOption2: 
-    option1IndexJump: 0
+    option1IndexJump: 1
     option2IndexJump: 0
     startDialogueEvent:
       m_PersistentCalls:
@@ -235,7 +235,7 @@ MonoBehaviour:
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - text: 
+  - text: The roar of the crowd, the clash of steel, there's nothing quite like it.
     isEnd: 0
     isQuestion: 0
     answerOption1: 
@@ -248,7 +248,7 @@ MonoBehaviour:
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
-  NPCTransform: {fileID: 0}
+  NPCTransform: {fileID: 582449170}
 --- !u!61 &582449172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -278,10 +278,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14564228, y: -0.10680473}
+  m_Offset: {x: 0.058129787, y: -0.029016137}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -292,7 +292,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.2247, y: 3.3666713}
+  m_Size: {x: 1.7272692, y: 2.1220534}
   m_EdgeRadius: 0
 --- !u!1001 &1316851482
 PrefabInstance:
@@ -304,11 +304,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3584429107003047214, guid: de705800f6ef2dc428fd1820273992ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 3584429107003047214, guid: de705800f6ef2dc428fd1820273992ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.09
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 3584429107003047214, guid: de705800f6ef2dc428fd1820273992ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -341,6 +341,10 @@ PrefabInstance:
     - target: {fileID: 3584429107003047214, guid: de705800f6ef2dc428fd1820273992ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158408131558536690, guid: de705800f6ef2dc428fd1820273992ca, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5925963528401324767, guid: de705800f6ef2dc428fd1820273992ca, type: 3}
       propertyPath: m_Name
@@ -672,7 +676,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.14564228, y: -0.10680473}
@@ -817,7 +821,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.14564228, y: -0.10680473}

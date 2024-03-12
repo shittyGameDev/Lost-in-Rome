@@ -14,12 +14,12 @@ public class DialogueManager : MonoBehaviour
     
 
     [SerializeField] private float typingSpeed = 0.05f;
-    [SerializeField] private float turningSpeed = 2f;
+   
 
     private List<dialogueString> dialogueList;
 
     [Header("Player")]
-    private Transform playerCamera;
+    
 
     private int currentDialogueIndex = 0;
 
@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
     {
         //St�nger av canvasen
         dialogueParent.SetActive(false);
-        playerCamera = Camera.main.transform;
+        
        
     }
 
@@ -39,8 +39,7 @@ public class DialogueManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        //Metod f�r att vrida kameran mot NPC
-        StartCoroutine(TurnCameraTowardsNPC(NPC));
+        
 
 
         dialogueList = textToPrint;
@@ -64,25 +63,7 @@ public class DialogueManager : MonoBehaviour
         option2Button.GetComponentInChildren<TMP_Text>().text = "No Option";
     }
 
-    private IEnumerator TurnCameraTowardsNPC(Transform NPC)
-    {
-        //D�r player kameran �r just nu
-        Quaternion startRotation = playerCamera.rotation;
-        //Tar fram vart n�gonstans kameran ska flytta sig till vilket �r NPC position
-        Quaternion targetRotation = Quaternion.LookRotation(NPC.position - playerCamera.position);
-
-        //Hur l�ng tid det ska ta f�r kameran att snappa dit den ska
-        float elapsedTime = 0f;
-
-        while(elapsedTime < 1f)
-        {
-            playerCamera.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime);
-            elapsedTime += Time.deltaTime * turningSpeed;
-            yield return null;
-        }
-        //Flytar player kameran mot NPC
-        playerCamera.rotation = targetRotation;
-    }
+    
 
     private bool optionSelected = false;
 
