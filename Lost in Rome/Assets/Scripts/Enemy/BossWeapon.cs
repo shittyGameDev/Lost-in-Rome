@@ -7,33 +7,35 @@ public class BossWeapon : MonoBehaviour
 	public int attackDamage = 20;
 	public int enragedAttackDamage = 40;
 
+	public Collider2D weapon;
+
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;
 
 	public void Attack()
 	{
-		Vector3 pos = transform.position;
+		Vector3 pos = weapon.transform.position;
 		pos += transform.right * attackOffset.x;
 		pos += transform.up * attackOffset.y;
 
-		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-		if (colInfo != null)
+		weapon = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+		if (weapon != null)
 		{
-			colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+			weapon.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
 		}
 	}
 
 	public void EnragedAttack()
 	{
-		Vector3 pos = transform.position;
+		Vector3 pos = weapon.transform.position;
 		pos += transform.right * attackOffset.x;
 		pos += transform.up * attackOffset.y;
 
-		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-		if (colInfo != null)
+		weapon = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+		if (weapon != null)
 		{
-			colInfo.GetComponent<PlayerHealth>().TakeDamage(enragedAttackDamage);
+			weapon.GetComponent<PlayerHealth>().TakeDamage(enragedAttackDamage);
 		}
 	}
 
