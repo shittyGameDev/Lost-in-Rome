@@ -2043,46 +2043,38 @@ MonoBehaviour:
   m_text: 'About Medea:
 
 
-
     Medea is a tragedy written by Seneca in 62 AD. The
     play is based on the Greek myth of Medea, a sorceress who seeks revenge on her
     husband Jason by killing their children. Medea''s revenge is both horrific and
     sympathetic, and the play has fascinated audiences for centuries.
 
 
+    The Play:
+
 
     The
-    Play:
-
-
-
-    The play is divided into five acts. Here is a brief summary of each
-    act:
-
-
-
-    Act 1: Medea is furious that Jason has left her to marry King Creon''s
-    daughter Creusa. She plans to get revenge on Jason by killing their children.
-
+    play is divided into five acts. Here is a brief summary of each act:
 
 
     Act
-    2: Medea sends a poisoned robe to Creusa, who dies when she puts it on.
+    1: Medea is furious that Jason has left her to marry King Creon''s daughter Creusa.
+    She plans to get revenge on Jason by killing their children.
 
 
-
-    Act
-    3: Medea kills her children.
-
+    Act 2: Medea
+    sends a poisoned robe to Creusa, who dies when she puts it on.
 
 
-    Act 4: Jason returns and finds his children
-    dead. He accuses Medea of the murder.
+    Act 3: Medea
+    kills her children.
 
 
+    Act 4: Jason returns and finds his children dead. He
+    accuses Medea of the murder.
 
-    Act 5: Medea escapes on a chariot
-    pulled by dragons, leaving Jason in grief and despair.
+
+    Act 5: Medea escapes on a chariot pulled by
+    dragons, leaving Jason in grief and despair.
 
 '
   m_isRightToLeft: 0
@@ -4435,6 +4427,7 @@ MonoBehaviour:
   endGameText: {fileID: 1459516404}
   insideTheatrePosition: {fileID: 796904521}
   outsideTheatrePosition: {fileID: 284157307}
+  hubCanvas: {fileID: 0}
 --- !u!61 &1236893614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4958,7 +4951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1431126146
 MonoBehaviour:
   m_ObjectHideFlags: 0

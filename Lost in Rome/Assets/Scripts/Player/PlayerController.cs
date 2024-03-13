@@ -99,6 +99,8 @@ public class PlayerController : MonoBehaviour
     public void DisableMovement()
     {
         CanMove = false; moveInput = Vector2.zero;
+        anim.SetFloat("Horizontal", 0f);
+        anim.SetFloat("Vertical", 0f);
     }
     void OnMove(InputValue moveValue) 
     {
