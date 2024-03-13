@@ -937,7 +937,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bf3540056ee314dbe5e0826df1150f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueStrings: []
+  dialogueStrings:
+  - text: The city got ravaged by a fire, hundred about hundred of houses are gone
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: We need every able body to help rebuild.
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: Using the new building material made from limestone, volcanic ash and water
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: Can you help?
+    isEnd: 0
+    isQuestion: 1
+    answerOption1: Yes
+    answerOption2: 
+    option1IndexJump: 4
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: 
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
   NPCTransform: {fileID: 0}
 --- !u!1 &1899332947
 GameObject:
@@ -1082,7 +1147,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bf3540056ee314dbe5e0826df1150f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueStrings: []
+  dialogueStrings:
+  - text: 'The theater, a place for stories to come alive, for the hearts of Rome
+      to beat as one.  '
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "The tragedies of Aeschylus, the comedies of Plautus\u2014each performance
+      a tapestry woven with the threads of our shared human experience."
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: "Ah, yes. To tread the boards of the stage, to embody the heroes and villains
+      of old\u2014what a noble pursuit it is."
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: 'Then let us put your skills to the test in the epicenter of civilization? '
+    isEnd: 0
+    isQuestion: 1
+    answerOption1: yes
+    answerOption2: 
+    option1IndexJump: 4
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text: 
+    isEnd: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    option1IndexJump: 0
+    option2IndexJump: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
   NPCTransform: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
