@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
         LoadCompletedLevels();
         Debug.Log("Completed levels: " + completedLevels);
-        AddScore();
     }
 
     void Start()
