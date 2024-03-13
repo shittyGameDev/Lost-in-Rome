@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LoadScenes : MonoBehaviour
 {
-
-    public void Hub()
-    {
-        SceneManager.LoadScene("Hub");
-    }
     public void Colloseum ()
     {
         SceneManager.LoadScene("Collo");

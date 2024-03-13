@@ -301,7 +301,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &83486973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -487,8 +486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.5191, y: -86}
-  m_SizeDelta: {x: 426.5323, y: 126}
+  m_AnchoredPosition: {x: 0.85747, y: -86}
+  m_SizeDelta: {x: 451.29, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &322326688
 MonoBehaviour:
@@ -626,7 +625,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &344056187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -732,7 +730,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &356278867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -838,7 +835,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &502095045
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -944,7 +940,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &551727005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1084,7 +1079,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 50}
+  m_SizeDelta: {x: 120, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596652836
 MonoBehaviour:
@@ -1839,119 +1834,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797370581}
   m_CullTransparentMesh: 1
---- !u!1001 &880498691
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3610259751748857371, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6696943923234211229, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1712395095}
-    - target: {fileID: 6696943923234211229, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Hub
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148252479681418384, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_Name
-      value: EndCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148252479681418384, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148252479681418384, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-      propertyPath: m_TagString
-      value: Finish
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
 --- !u!1001 &942375763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7036,7 +6918,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &1139386157
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7490,7 +7371,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &1216912062
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7637,8 +7517,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.2947, y: 63}
-  m_SizeDelta: {x: 432.1556, y: 126}
+  m_AnchoredPosition: {x: 0.85747, y: 63}
+  m_SizeDelta: {x: 451.29, y: 126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1269301164
 MonoBehaviour:
@@ -16010,7 +15890,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &1510764229
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16121,74 +16000,6 @@ Transform:
   - {fileID: 344056188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1712395094
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 529.52386
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 125.245964
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.6495897
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958482591815696949, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7223477693922501919, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-      propertyPath: m_Name
-      value: SceneManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
---- !u!114 &1712395095 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8993360843045161234, guid: dcbdf242dc2cb3043a9b09e82537f045, type: 3}
-  m_PrefabInstance: {fileID: 1712395094}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 202b4fe3c3c78cd46b52cf7fed8ee4d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1717871157
 GameObject:
   m_ObjectHideFlags: 0
@@ -16227,7 +16038,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &1717871159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16533,7 +16343,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &1923162646
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16722,11 +16531,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1968652148 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9148252479681418384, guid: 257ca2977f3db314cab83f99ea37bd90, type: 3}
-  m_PrefabInstance: {fileID: 880498691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977410103
 GameObject:
   m_ObjectHideFlags: 0
@@ -16856,7 +16660,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &2110559753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16962,7 +16765,6 @@ MonoBehaviour:
   spawnInterval: 15
   slider: {fileID: 1302771780}
   winParticles: {fileID: 1014367298}
-  winScreen: {fileID: 1968652148}
 --- !u!212 &2121275934
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18358,5 +18160,3 @@ SceneRoots:
   - {fileID: 1014367301}
   - {fileID: 1977410104}
   - {fileID: 24814893}
-  - {fileID: 880498691}
-  - {fileID: 1712395094}

@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class WizeOldMan : MonoBehaviour
 {
-    public GameManager gameManager;
-    public GameObject canvas;
-    private void OnTriggerEnter2D(Collider2D other)
+    
+    void Start()
     {
-        if (other.CompareTag("Player"))
-        {
-            gameManager.AddScore();
-            Debug.Log("Score: " + gameManager.completedLevels);
-        }
+        
     }
-    private void OnTriggerExit2D(Collider2D other)
+
+    // Update is called once per frame
+    void Update()
     {
-        if (other.CompareTag("Player"))
-        {
-            canvas.SetActive(true);
-        }
+        
     }
 }
