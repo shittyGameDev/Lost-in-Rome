@@ -12,10 +12,14 @@ public class SymbolSpawning : MonoBehaviour
     private int maxReputation = 40;
     public Slider slider;
 
+    private bool gameWon;
+
     private GameObject lawSymbols;
     private GameObject foodSymbols;
     private GameObject warSymbols;
     private GameObject knowledgeSymbols;
+
+    public GameObject winParticles;
 
     private GameObject currentSymbolInstance; // Referens till den nuvarande spawnade symbolen
 
@@ -48,10 +52,10 @@ public class SymbolSpawning : MonoBehaviour
             currentSymbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
 
             // F�rst�r symbolen efter 10 sekunder
-            Destroy(currentSymbolInstance, 10f);
+            Destroy(currentSymbolInstance, 5f);
 
             // V�ntar innan den spawnar n�sta symbol
-            yield return new WaitForSeconds(Random.Range(spawnInterval - 5, spawnInterval + 5));
+            yield return new WaitForSeconds(Random.Range(spawnInterval - 5, spawnInterval + 10));
         }
     }
 
@@ -63,6 +67,7 @@ public class SymbolSpawning : MonoBehaviour
             Destroy(lawSymbols);
             reputation += 2;
             slider.value = reputation;
+            CheckWinCondition();
         }
     }
 
@@ -74,6 +79,7 @@ public class SymbolSpawning : MonoBehaviour
             Destroy(foodSymbols);
             reputation += 2;
             slider.value = reputation;
+            CheckWinCondition();
         }
     }
 
@@ -85,6 +91,7 @@ public class SymbolSpawning : MonoBehaviour
             Destroy(warSymbols);
             reputation += 2;
             slider.value = reputation;
+            CheckWinCondition();
         }
     }
     public void DestroyKnowledgeSymbols()
@@ -95,6 +102,20 @@ public class SymbolSpawning : MonoBehaviour
             Destroy(knowledgeSymbols);
             reputation += 2;
             slider.value = reputation;
+            CheckWinCondition();
+        }
+    }
+
+    public void CheckWinCondition()
+    {
+        if (reputation >= maxReputation)
+        {
+            winParticles.SetActive(true);
+            gameWon = true;
+            if(gameWon == true)
+            {
+                Debug.Log("You won the game!");
+            }
         }
     }
 }
