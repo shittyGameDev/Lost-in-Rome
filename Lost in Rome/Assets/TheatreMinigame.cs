@@ -24,6 +24,8 @@ public class TheatreMinigame : MonoBehaviour
     private int currentQuestionIndex = 0;
     private int correctAnswers = 0;
 
+    public GameObject hubCanvas;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); 
@@ -130,6 +132,8 @@ public class TheatreMinigame : MonoBehaviour
             player.transform.position = outsideTheatrePosition.position;
             blackScreen.SetActive(false);
             player.GetComponent<PlayerController>().CanMove = true;
+            yield return new WaitForSeconds(2f);
+            hubCanvas.SetActive(true);
         }
         else
         {   
