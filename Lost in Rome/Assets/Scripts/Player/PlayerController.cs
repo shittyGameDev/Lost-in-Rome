@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     public void DisableMovement()
     {
-        CanMove = false;
+        CanMove = false; moveInput = Vector2.zero;
     }
     void OnMove(InputValue moveValue) 
     {

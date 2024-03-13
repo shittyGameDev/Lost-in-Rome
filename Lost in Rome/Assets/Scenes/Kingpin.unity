@@ -3560,13 +3560,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2294413395379343283, guid: 631f3f6ba471d2844bc456a23b1668df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3522225670497769120, guid: 631f3f6ba471d2844bc456a23b1668df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4643855129867546892, guid: 631f3f6ba471d2844bc456a23b1668df, type: 3}
       propertyPath: m_Name
       value: Canvas For Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 4643855129867546892, guid: 631f3f6ba471d2844bc456a23b1668df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5236709204975121396, guid: 631f3f6ba471d2844bc456a23b1668df, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3590,7 +3598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5236709204975121396, guid: 631f3f6ba471d2844bc456a23b1668df, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -109.425
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 7058171309049344869, guid: 631f3f6ba471d2844bc456a23b1668df, type: 3}
       propertyPath: m_AnchorMax.y
