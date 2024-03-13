@@ -19,15 +19,16 @@ public class SymbolSpawning : MonoBehaviour
 
     private GameObject currentSymbolInstance; // Referens till den nuvarande spawnade symbolen
 
-    private void Start()
+    void Start()
     {
+        float waitTime = Random.Range(2, 5);
         // Startar symbol spawnadet
-        StartCoroutine(SpawnSymbol());
+        StartCoroutine(SpawnSymbol(waitTime));
         slider.maxValue = maxReputation;
         slider.value = reputation;
     }
 
-    IEnumerator SpawnSymbol()
+    IEnumerator SpawnSymbol(float waitTime)
     {
         while (true)
         {
