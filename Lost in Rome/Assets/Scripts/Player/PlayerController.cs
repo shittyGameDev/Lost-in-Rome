@@ -91,6 +91,15 @@ public class PlayerController : MonoBehaviour
        }
     }
 
+    public void EnableMovement()
+    {
+        CanMove = true;
+    }
+
+    public void DisableMovement()
+    {
+        CanMove = false;
+    }
     void OnMove(InputValue moveValue) 
     {
         moveInput = moveValue.Get<Vector2>();
