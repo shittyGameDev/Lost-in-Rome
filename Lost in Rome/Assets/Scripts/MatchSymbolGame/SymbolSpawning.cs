@@ -20,6 +20,7 @@ public class SymbolSpawning : MonoBehaviour
     private GameObject knowledgeSymbols;
 
     public GameObject winParticles;
+    public GameObject winScreen;
 
     private GameObject currentSymbolInstance; // Referens till den nuvarande spawnade symbolen
 
@@ -114,7 +115,8 @@ public class SymbolSpawning : MonoBehaviour
             gameWon = true;
             if(gameWon == true)
             {
-                Debug.Log("You won the game!");
+                Time.timeScale = 0;
+                winScreen.SetActive(true);
             }
         }
     }
