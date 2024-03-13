@@ -1465,6 +1465,7 @@ GameObject:
   - component: {fileID: 685911050}
   - component: {fileID: 685911049}
   - component: {fileID: 685911051}
+  - component: {fileID: 685911052}
   m_Layer: 0
   m_Name: HubGameManager
   m_TagString: Untagged
@@ -1513,6 +1514,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SenateBoi: {fileID: 615585096}
+  gameManager: {fileID: 685911052}
+--- !u!114 &685911052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685911048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703d202589e2a448adc6c1b335de26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completedLevels: 0
 --- !u!1 &814677783
 GameObject:
   m_ObjectHideFlags: 0
