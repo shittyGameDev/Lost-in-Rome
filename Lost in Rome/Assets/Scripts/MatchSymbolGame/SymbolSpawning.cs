@@ -21,6 +21,8 @@ public class SymbolSpawning : MonoBehaviour
 
     public GameObject winParticles;
 
+    public GameObject winScreen;
+
     private GameObject currentSymbolInstance; // Referens till den nuvarande spawnade symbolen
 
     void Start()
@@ -114,7 +116,9 @@ public class SymbolSpawning : MonoBehaviour
             gameWon = true;
             if(gameWon == true)
             {
-                Debug.Log("You won the game!");
+                StopAllCoroutines();
+                winScreen.SetActive(true);
+                Time.timeScale = 0;          
             }
         }
     }
