@@ -8,6 +8,8 @@ public class TextBoxTrigger : MonoBehaviour
     public GameObject textBox;
     public TextMeshProUGUI text;
     public GameObject questText;
+
+    public GameObject questIcon;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +17,7 @@ public class TextBoxTrigger : MonoBehaviour
         {
             textBox.SetActive(true);
             questText.SetActive(true);
+            questIcon.SetActive(false);
         }
         else if(other.GetComponent<QuestManager>().questCompleted == true)
         {
