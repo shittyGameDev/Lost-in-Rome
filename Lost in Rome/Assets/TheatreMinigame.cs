@@ -9,6 +9,7 @@ public class TheatreMinigame : MonoBehaviour
     public GameObject blackScreen;
     public AudioSource audienceReaction;
     public AudioClip booSound, applauseSound, cheerSound;
+    public GameObject questionPanel;
     public TMP_Text questionText;
     public Button[] answerButtons; 
     public Button restartButton;
@@ -27,6 +28,7 @@ public class TheatreMinigame : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player"); 
         endGamePanel.SetActive(false);
+
     }
 
     void Update()
@@ -44,11 +46,7 @@ public class TheatreMinigame : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         player.transform.position = insideTheatrePosition.position;
         blackScreen.SetActive(false);
-        questionText.gameObject.SetActive(true);
-        foreach(var button  in answerButtons)
-        {
-            button.gameObject.SetActive(true);
-        }
+        questionPanel.SetActive(true);
         StartMinigame();
     }
 
@@ -117,11 +115,7 @@ public class TheatreMinigame : MonoBehaviour
 
     IEnumerator FinishSequence()
     {
-        questionText.gameObject.SetActive(false);
-        foreach (var button in answerButtons)
-        {
-            button.gameObject.SetActive(false);
-        }
+        questionPanel.SetActive(false);
         endGamePanel.SetActive(true);
         if (correctAnswers == questions.Count)
         {
@@ -164,11 +158,7 @@ public class TheatreMinigame : MonoBehaviour
         currentQuestionIndex = 0;
         correctAnswers = 0;
 
-        questionText.gameObject.SetActive(true);
-        foreach (var button in answerButtons)
-        {
-            button.gameObject.SetActive(true);
-        }
+        questionPanel.SetActive(true);
 
         StartMinigame();
     }
@@ -187,11 +177,7 @@ public class TheatreMinigame : MonoBehaviour
         player.transform.position = outsideTheatrePosition.position;
 
         blackScreen.SetActive(false);
-        questionText.gameObject.SetActive(false);
-        foreach (var button in answerButtons)
-        {
-            button.gameObject.SetActive(false);
-        }
+        questionPanel.SetActive(false);
         blackScreen.SetActive(false);
         player.GetComponent<PlayerController>().CanMove = true;
     }
