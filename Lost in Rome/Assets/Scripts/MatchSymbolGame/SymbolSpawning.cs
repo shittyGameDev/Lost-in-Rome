@@ -21,21 +21,28 @@ public class SymbolSpawning : MonoBehaviour
 
     void Start()
     {
-        float waitTime = Random.Range(2, 5);
+        float delay = Random.Range(2, 5);
         // Startar symbol spawnadet
-        StartCoroutine(SpawnSymbol(waitTime));
+        StartCoroutine(DelayedSymbolSpawn(delay));
         slider.maxValue = maxReputation;
         slider.value = reputation;
     }
 
-    IEnumerator SpawnSymbol(float waitTime)
+    IEnumerator DelayedSymbolSpawn(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        StartCoroutine(SpawnSymbol());
+    }
+
+    IEnumerator SpawnSymbol()
     {
         while (true)
         {
             // Tar fram random symboler
             int randomIndex = Random.Range(0, symbolPrefabs.Length);
             // Spawn positionen f�r symbolerna
-            Vector3 spawnPosition = transform.position + Vector3.up * 1.5f;
+            Vector3 spawnPosition = transform.position + Vector3.up * .5f;
 
             // Spawnar symbolen
             currentSymbolInstance = Instantiate(symbolPrefabs[randomIndex], spawnPosition, Quaternion.identity);
