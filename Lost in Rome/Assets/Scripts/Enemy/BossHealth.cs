@@ -7,7 +7,9 @@ public class BossHealth : MonoBehaviour
 
 	public int health = 500;
 
+	public GameObject Manager;
 	public GameObject deathEffect;
+	public CompletedBoss completeBoss;
 
 	public bool isInvulnerable = false;
 
@@ -24,15 +26,18 @@ public class BossHealth : MonoBehaviour
 		}
 
 		if (health <= 0)
-		{
+		{ 
 			Die();
 		}
 	}
 
 	void Die()
 	{
+		Manager.GetComponent<CompletedBoss>().scoreUpdate();
+		completeBoss.GetComponent<CompletedBoss>().ShowObjects();
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
+		
 	}
 
 }
