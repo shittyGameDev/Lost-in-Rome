@@ -7,7 +7,7 @@ public class LoadScenes : MonoBehaviour
 {
     public void Colloseum ()
     {
-        SceneManager.LoadScene("Andreas");
+        SceneManager.LoadScene("Collo");
     }
     
     public void Cement()
