@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Detta script är kopplat till en trigger som aktiverar en textruta när spelaren går in i en trigger
 public class WizeOldMan : MonoBehaviour
 {
     public GameObject gameManager;

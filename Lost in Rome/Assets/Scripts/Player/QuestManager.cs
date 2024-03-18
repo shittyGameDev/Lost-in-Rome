@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
+    // Ett script som håller koll på om en quest är klar eller inte
     public bool questCompleted;
 
     public GameObject wiseOldMan;

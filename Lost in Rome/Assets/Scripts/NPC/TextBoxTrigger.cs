@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Detta script är kopplat till en trigger som aktiverar en textruta när spelaren går in i en trigger
 public class TextBoxTrigger : MonoBehaviour
 {
     public GameObject textBox;
@@ -27,6 +28,7 @@ public class TextBoxTrigger : MonoBehaviour
         }
     }
 
+    // Denna metod körs när spelaren går ut ur triggerområdet
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Ett gamemanager script som håller koll på om spelet är igång eller inte
 public class SenatenManager : MonoBehaviour
 {
     public GameObject gameCanvas;
