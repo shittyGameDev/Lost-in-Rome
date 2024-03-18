@@ -124,7 +124,7 @@ public class TheatreMinigame : MonoBehaviour
             restartButton.gameObject.SetActive(false); 
             exitButton.gameObject.SetActive(false);   
             audienceReaction.PlayOneShot(applauseSound);
-            endGameText.text = "Grattis! Du klarade alla frågor!";
+            endGameText.text = "Congrats! You have learned about Medea, an important play from ancient Rome. You have learned all the acts from the play and how the actor portrayed Medea in the play.";
             yield return new WaitForSeconds(applauseSound.length);
             blackScreen.SetActive(true);
             endGamePanel.SetActive(false);
