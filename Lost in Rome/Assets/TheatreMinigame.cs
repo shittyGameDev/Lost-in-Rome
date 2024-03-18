@@ -14,7 +14,7 @@ public class TheatreMinigame : MonoBehaviour
     public Button[] answerButtons; 
     public Button restartButton;
     public Button exitButton;
-    public List<Question> questions; 
+    public List<Question> questions; //lista med fårgor som ska ställas i minigamet
     public GameObject endGamePanel; 
     public TMP_Text endGameText; 
     public Transform insideTheatrePosition;
@@ -28,19 +28,20 @@ public class TheatreMinigame : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); 
+        player = GameObject.FindGameObjectWithTag("Player"); //dåligt sätt att göra det på I know
         endGamePanel.SetActive(false);
 
     }
 
     void Update()
     {
+        //kontrollerar om spelaren är nära, har läst en bok (förutsätter en extern kontroll) och trycker på tangenten E för att starta minispelet
         if (playerNear && Book.hasReadBook && Input.GetKeyDown(KeyCode.E))
         {
-            StartCoroutine(StartMinigameSequence());
+            StartCoroutine(StartMinigameSequence()); 
         }
     }
-
+    //corutine för att spela cutscene o flytta spelaren till teatern
     IEnumerator StartMinigameSequence()
     {
         player.GetComponent<PlayerController>().CanMove = false;
@@ -49,16 +50,16 @@ public class TheatreMinigame : MonoBehaviour
         player.transform.position = insideTheatrePosition.position;
         blackScreen.SetActive(false);
         questionPanel.SetActive(true);
-        StartMinigame();
+        StartMinigame(); //startar spelet
     }
-
+    //återställer minigamet och visar nästa fråga
     private void StartMinigame()
     {
         currentQuestionIndex = 0;
         correctAnswers = 0;
         ShowNextQuestion();
     }
-
+    //visar nästa fråga i minispelet eller avslutar det om det inte finns fler frågor
     private void ShowNextQuestion()
     {
         if (currentQuestionIndex < questions.Count)
@@ -86,7 +87,7 @@ public class TheatreMinigame : MonoBehaviour
             FinishMinigame();
         }
     }
-
+    //hanterar valet av svar och spelar upp en ljudreaktion baserat på om svaret var rätt eller fel
     public void ChooseOption(int optionIndex)
     {
         if (optionIndex == questions[currentQuestionIndex].correctAnswerIndex)
@@ -109,12 +110,12 @@ public class TheatreMinigame : MonoBehaviour
             FinishMinigame();
         }
     }
-
+    //avslutar spelet och visar resultatet genom att starta en coroutine
     void FinishMinigame()
     {
         StartCoroutine(FinishSequence());
     }
-
+    //en coroutine som hanterar sekvensen för att avsluta spelet
     IEnumerator FinishSequence()
     {
         questionPanel.SetActive(false);
@@ -136,7 +137,8 @@ public class TheatreMinigame : MonoBehaviour
             hubCanvas.SetActive(true);
         }
         else
-        {   
+        {
+            //om inte alla svar var korrekta, visar knapparna för att starta om eller lämna spelet
             restartButton.gameObject.SetActive(true);
             exitButton.gameObject.SetActive(true);
             audienceReaction.PlayOneShot(booSound);
@@ -149,7 +151,7 @@ public class TheatreMinigame : MonoBehaviour
     {
         StartCoroutine(RestartMinigameSequence());
     }
-
+    //en coroutine som startar om spelet, återställer allt och kallar på startminigame igen för att börja om
     IEnumerator RestartMinigameSequence()
     {
         endGamePanel.SetActive(false);
@@ -171,7 +173,7 @@ public class TheatreMinigame : MonoBehaviour
     {
         StartCoroutine(ExitMinigameSequence()); 
     }
-
+    //coroutine som hanterar när spelaren ska lämna spelet 
     IEnumerator ExitMinigameSequence()
     {
         endGamePanel.SetActive(false);
