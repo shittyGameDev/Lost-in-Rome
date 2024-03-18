@@ -17,12 +17,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
-    public static PlayerController Instance { get; private set; }
+    public static PlayerController Instance { get; private set; } //singleton instans av scriptet
     public bool CanMove { get; set; } = true;
     private Vector2 lastMoveDirection;
 
     void Awake()
     {
+        //säkerhetsställer att de endast finns en instans av scriptet
         if (Instance == null)
         {
             Instance = this;
@@ -52,12 +53,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!CanMove || moveInput == Vector2.zero) return;
 
+        //om spelaren kan flytta på sig så görs det
         if (KanMove(moveInput))
         {
             rb.MovePosition(rb.position + moveInput * speed * Time.fixedDeltaTime);
         }
     }
-
+    //kontrollerar om spelaren kan röra sig i en given riktning baserat på kollisioner
     private bool KanMove(Vector2 direction)
     {
        if (direction != Vector2.zero) 
@@ -76,10 +78,12 @@ public class PlayerController : MonoBehaviour
        }
        return false;
     }
+    //hanterar spelarens attackhandling baserat på inputen 
     public void OnAttack(InputValue value)
     {
        if (value.isPressed)
        {
+            //väljer animation baserat på rörelseriktning
            if (Mathf.Abs(moveInput.y) > Mathf.Abs(moveInput.x))
            {
                anim.SetTrigger(moveInput.y > 0 ? "AttackUp" : "AttackDown");
@@ -102,6 +106,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Horizontal", 0f);
         anim.SetFloat("Vertical", 0f);
     }
+    //uppdaterar moveInput baserat på spelarens rörelse input
     void OnMove(InputValue moveValue) 
     {
         moveInput = moveValue.Get<Vector2>();

@@ -13,12 +13,13 @@ public class EntryBookhouse : MonoBehaviour
 
     private void Update()
     {
+        //kollar om spelaren är nära dörren och har tryckt på E för att starta coroutinen
         if (playerIsNearDoor && Input.GetKeyDown(KeyCode.E))
         {
-            StartCoroutine(EnterLibraryCutscene());
+            StartCoroutine(EnterLibraryCutscene());//startar den för när man går in i biblioteket
         }
     }
-
+    //coroutine för att hantera när spelaren går in i biblioteket med en enkel "cutscene"
     private IEnumerator EnterLibraryCutscene()
     {
         blackScreen.SetActive(true); 

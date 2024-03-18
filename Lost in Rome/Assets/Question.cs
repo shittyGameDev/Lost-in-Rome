@@ -5,11 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class Question
 {
-    public string questionText; // Texten för själva frågan
-    public string[] answers; // En array med svarsalternativ
-    public int correctAnswerIndex; // Index för det korrekta svarsalternativet i arrayen ovan
+    public string questionText; //texten för själva frågan
+    public string[] answers; //en array med svarsalternativ
+    public int correctAnswerIndex; //index för det korrekta svarsalternativet i arrayen ovan
 
-    // En konstruktor är inte nödvändig men kan vara användbar om du vill skapa frågor dynamiskt via kod
+    //en konstruktor så man kan dynamiskt skapa nya frågor 
     public Question(string questionText, string[] answers, int correctAnswerIndex)
     {
         this.questionText = questionText;
