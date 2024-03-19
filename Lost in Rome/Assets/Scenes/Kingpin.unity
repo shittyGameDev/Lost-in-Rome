@@ -1590,34 +1590,10 @@ MonoBehaviour:
     option2IndexJump: 0
     startDialogueEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1370953442236403432}
-          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: DisableMovement
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1370953442236403432}
-          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: EnableMovement
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   NPCTransform: {fileID: 358645855}
 --- !u!61 &358645854
 BoxCollider2D:
@@ -22644,19 +22620,7 @@ MonoBehaviour:
     option2IndexJump: 0
     startDialogueEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1370953442236403432}
-          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: DisableMovement
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -22688,19 +22652,7 @@ MonoBehaviour:
         m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1370953442236403432}
-          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: EnableMovement
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   NPCTransform: {fileID: 1607278946}
 --- !u!61 &1607278945
 BoxCollider2D:

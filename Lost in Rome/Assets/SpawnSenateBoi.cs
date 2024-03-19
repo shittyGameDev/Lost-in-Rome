@@ -18,7 +18,7 @@ public class SpawnSenateBoi : MonoBehaviour
 
     public void spawnSenate()
     {
-        if(gameManager.completedLevels == 3)
+        if(gameManager.completedLevels >= 3)
         {
             SenateBoi.SetActive(true);
         }
