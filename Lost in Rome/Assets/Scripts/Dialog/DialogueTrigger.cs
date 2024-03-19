@@ -17,6 +17,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             collision.GetComponent<DialogueManager>().DialogueStart(dialogueStrings, NPCTransform);
             hasSpoken = true;
+            
         }
     }
 }

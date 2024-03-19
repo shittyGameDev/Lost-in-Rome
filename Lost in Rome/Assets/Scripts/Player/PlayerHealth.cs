@@ -10,18 +10,23 @@ public class PlayerHealth : MonoBehaviour
 
 	public GameObject deathEffect;
 
+	// Metod för att spelaren ska ta skada
 	public void TakeDamage(int damage)
 	{
+		// Reducerar hp med mängden skada
 		health -= damage;
 
+		// Startar animationen för att ta skada
 		StartCoroutine(DamageAnimation());
 
+		// Vad som händer när spelaren får slut på hp
 		if (health <= 0)
 		{
 			Die();
 		}
 	}
 
+	// Laddar om scenen när spelaren dör
 	void Die()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -31,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		SpriteRenderer[] srs = GetComponentsInChildren<SpriteRenderer>();
 
+		// Animation som gör att spelaren blinkar när den tar skada genom att göra färgen genomskinlig
 		for (int i = 0; i < 3; i++)
 		{
 			foreach (SpriteRenderer sr in srs)

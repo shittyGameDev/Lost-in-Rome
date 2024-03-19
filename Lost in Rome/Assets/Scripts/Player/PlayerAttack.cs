@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         // Väntar innan attacken görs
         yield return new WaitForSeconds(0.5f); 
 
-        // Attacken
+        // Attacken. Tittar ifall det är bossen som träffas av collidern
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, attackRange, bossLayer);
         foreach (Collider2D enemy in hitEnemies)
         {

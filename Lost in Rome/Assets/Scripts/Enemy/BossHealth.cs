@@ -10,6 +10,7 @@ public class BossHealth : MonoBehaviour
 	public GameObject Manager;
 	public GameObject deathEffect;
 	public CompletedBoss completeBoss;
+	public GameObject endGame;
 
 	public bool isInvulnerable = false;
 
@@ -42,6 +43,8 @@ public class BossHealth : MonoBehaviour
 		Manager.GetComponent<CompletedBoss>().scoreUpdate();
 		// Spawnar föremålen runt i scenen
 		completeBoss.GetComponent<CompletedBoss>().ShowObjects();
+		// Sätter på endgame skärmen
+		endGame.GetComponent<EndGame>().showEndGame();
 		// Spelar deatheffecten
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
 		// Förstör objektet
